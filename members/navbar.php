@@ -9,7 +9,7 @@
                      <span class="icon-bar"></span>
                      <span class="icon-bar"></span>
                     </a>
-                    <marquee class="brand" width="950px" direction="left" behavior="alternate" ><span style="font-size:32px; width=''font-weight:bold;color:white;font-family:'lobster', cursive;"> ATT Travels</span></marquee>
+                    <marquee class="brand" width="950px" direction="left" behavior="alternate" ><span style="font-size:32px; width=''font-weight:bold;color:white;font-family:'lobster', cursive;"> ATT Transport</span></marquee>
 				 </div>
 				  <!--.nav-collapse -->
                     <div class="nav-collapse collapse">

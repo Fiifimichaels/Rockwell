@@ -1,10 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
-
+<html lang="en" class="no-js"> 
 <?php
   $public_key = "6LenwnUhAAAAAKztyWRyngZ-HVnidZtCkbxVUp_y";
   $private_key = "6LfXvXUhAAAAAJfKdRXeEa96m_P092E4xpYgPhSp";
@@ -18,6 +13,7 @@
   }
  ?>
     <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <meta charset="UTF-8" />
         <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
         <title>ATT Transport</title>
@@ -25,13 +21,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Employee Manager" />
         <meta name="author" content="Codrops" />
-        <link rel="icon" type="image/x-icon" href="members/images/favicon.jpeg">
+        <link rel="icon" type="image/x-icon" href="images/attt.png">
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
         <link rel="stylesheet" type="text/css" href="css/style3.css" />
 		<link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
     </head>
     <?php include('header.php'); ?>
-    <body style="background-image: url('bg.jpg') ; background-size:100%;">
+    <body style="background-image: url('images/bg.jpg') ; background-size:100%;">
         <div class="container">
            
             <section>
@@ -102,7 +98,48 @@
                 </div>
             </section>
         </div>
+        <!-- Start Footer -->
+	<footer class="footer-area bg-f">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6">
+					<h3>About Us</h3>
+					<p>ATT Transport provides safe, reliable, and affordable transportation for students across Ghana's tertiary institutions, prioritizing their comfort and safety.</p>
+                </div>
+				<div class="col-lg-6 col-md-6">
+					<h3>Contact info</h3>
+					<p class="lead"><i class="fas fa-map-marker-alt"></i> KNUST Campus, Kumasi, Ghana</p>
+					<p class="lead"><a href="tel:233548224452"><i class="fas fa-phone"></i> (+233) 0548224452 / 0507892821</a></p>
+					<p><a href="#"><i class="fas fa-envelope"></i> asumahchristemmanuel2018@gmail.com</a></p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<p class="company-name">All Rights Reserved. &copy; 2023 <a href="#">ATT Transport</a> Design By : 
+					    <a href="https://html.design/">KHomPaTech</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- End Footer -->
         <style>
+          footer {
+  margin-top: 50px;
+}
+
+form {
+  margin-bottom: 50px;
+}
+
+           .container {
+  display: flex;
+  justify-content: center;
+}
             .animate.form {
                 margin-top: 50%;
   max-width: 400px;
@@ -158,6 +195,23 @@
   background-color: #0069d9;
 }
 
+footer {
+    position: fixed;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    z-index: 9999;
+}
+
+
+footer h3 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 30px;
+}
 .animate.form .change_link {
   text-align: center;
   font-size: 16px;
@@ -193,20 +247,13 @@
   }
 }
 
-            #reg {
-  border: 10px solid #000;
+    #reg {
   padding: 10px;
   transition: all 0.5s ease;
   margin: 100px auto 0;
 }
 
 
-#reg:hover {
-  border-color: #fff;
-  transform: scale(1.05);
-}
-
         </style>
-            <?php include('footer.php'); ?>
     </body>
 </html>

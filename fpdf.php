@@ -3,8 +3,8 @@
 * FPDF                                                                         *
 *                                                                              *
 * Version: 1.84                                                                *
-* Date:    2021-08-28                                                          *
-* Author:  Olivier PLATHEY                                                     *
+* Date:    2023-04-10                                                          *
+* Author:  Quaicoe Michael                                                    *
 *******************************************************************************/
 
 define('FPDF_VERSION','1.84');

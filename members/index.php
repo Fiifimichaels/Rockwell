@@ -20,7 +20,7 @@
     <head>
         <meta charset="UTF-8" />
         <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
-        <title>ATT Travels</title>
+        <title>ATT Transport</title>
         <script src="https://www.google.com/recaptcha/api.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Employee Manager" />
@@ -39,7 +39,7 @@
                 <div class="clr"></div>
             </div><!--/ Codrops top bar -->
             <header>
-                <h1>ATT Travels <span>ACCESS POINT</span></h1>
+                <h1>ATT Transport <span>ACCESS POINT</span></h1>
 
             </header>
             <section>

@@ -4,7 +4,11 @@
 <head>
   <script src="https://widget.northeurope.cloudapp.azure.com:9443/v0.1.0/mobile-money-widget-mtn.js"></script>
   <script src="TODO_REPLACE_WITH_PRODUCTION_PATH"></script>
-
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
     .selected {
       background-color: blue;
@@ -129,13 +133,12 @@
                                 <!-- pick up details -->
                                 <div style="width: 50%;">
                                   <div class="card-content">
-                                    <h4>Select pick up details</h4>
                                     <div class="control-group">
                                       <p>
                                       <div class="controls">
                                         <p>
                                         <div class="input-field col m6 s12">
-                                          <label for="fromdate" required="required">Year</label>
+                                          <label for="fromdate" required="required">Level</label>
                                           <select class="input focused" name="level" id="focusedInput" required="required" type="text">
                                             <option value=""> </option>
                                             <option value="Level 100">Level 100</option>
@@ -155,15 +158,17 @@
                                         <option value=""> </option>
                                         <option value="Parade grounds">Parade grounds</option>
                                         <option value="Ayeduase gate">Ayeduase gate</option>
-                                        <option value="Evandy (Newsite)">Evandy (Newsite) </option>
+                                        <option value="Brunei">Brunei</option>
                                         <option value="Tech Junction">Tech Junction</option>
                                       </select>
                                     </div>
                                   </div>
+                                  <p>
                                   <div class="input-field col m12 s12">
-                                    <label for="passwordsignup" class="youpasswd" data-icon="p">Parent/Guardian's Number </label>
+                                    <label for="passwordsignup" class="youpasswd">Parent/Guardian's Number </label>
                                     <input id="passwordsignup" name="gmobile" required="required" type="text" placeholder="eg.+233******748" />
                                   </div>
+                                  </p>
                                 </div>
                                 <!-- end of pick up details -->
 
@@ -174,7 +179,7 @@
                                       <div class="card-content">
                                         <div class="input-field col m6 s12">
                                           <label for="todate" required="required">
-                                            <h4> Select Destination</h4>
+                                            <h4> Seat Reservation</h4>
                                           </label>
                                           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#seatModal"> Select seat number</button>
                                           <!-- Modal for Accra & Tema Bus-->
@@ -195,15 +200,13 @@
                                                       <table id="seatsDiagram" name="seatNumber" class="form-control">
                                                           <tr>
                                                             <?php
-                                                             $result = mysqli_query($conn, "select seatnum from requestbus where destination = 'Kasoa, Cape Or Takoradi'");
+                                                             $result = mysqli_query($conn, "select seatnum from requestbus where destination = 'Kasoa, Cape Or Takoradi' and trip_status='active'");
                                                              $seatnum = array();
                                                              if (mysqli_num_rows($result) > 0) {
                                                                while ($row = mysqli_fetch_assoc($result)) {
                                                                  $seatnum[] = $row['seatnum'];
                                                                }
-                                                             } else {
-                                                               echo "0 results";
-                                                             }
+                                                             } 
                                                             for ($i = 1; $i <= 15; $i++) {
                                                               if (in_array($i, $seatnum)) {
                                                                 echo "<td tabindex=\"-1\" disabled style=\"background-color: #f1f1f1; color: #999; pointer-events: none;\" id=\"seat-$i\" data-name=\"$i\">$i</td>";
@@ -215,18 +218,16 @@
                                                           </tr>
                                                           <tr>
                                                             <?php 
-                                                            $result = mysqli_query($conn, "select seatnum from requestbus where destination = 'Kasoa, Cape Or Takoradi'");
+                                                            $result = mysqli_query($conn, "select seatnum from requestbus where destination = 'Kasoa, Cape Or Takoradi' and trip_status='active'");
                                                              $seatnum = array();
                                                              if (mysqli_num_rows($result) > 0) {
                                                                while ($row = mysqli_fetch_assoc($result)) {
                                                                  $seatnum[] = $row['seatnum'];
                                                                }
-                                                             } else {
-                                                               echo "0 results";
-                                                             }
+                                                             } 
                                                             for ($i = 16; $i <= 30; $i++) {
                                                               if (in_array($i, $seatnum)) {
-                                                                echo "<td tabindex=\"-1\" disabled style=\"background-color: #f1f1f1; color: #999; pointer-events: none;\" id=\"seat-$i\" data-name=\"$i\">$i</td>";
+                                                                echo "<td tabindex=\"-1\" disabled style=\"background-color: #f1f1f1; color: #999; pointer-events: none;\" id=\"seat-$i\" data-name=\"$i\"> $i</td>";
                                                               } else {
                                                                 echo "<td id=\"seat-$i\" data-name=\"$i\">$i</td>";
                                                               }
@@ -235,15 +236,13 @@
                                                           </tr>
                                                           <tr>
                                                             <?php 
-                                                            $result = mysqli_query($conn, "select seatnum from requestbus where destination = 'Kasoa, Cape Or Takoradi'");
+                                                            $result = mysqli_query($conn, "select seatnum from requestbus where destination = 'Kasoa, Cape Or Takoradi' and trip_status='active'");
                                                              $seatnum = array();
                                                              if (mysqli_num_rows($result) > 0) {
                                                                while ($row = mysqli_fetch_assoc($result)) {
                                                                  $seatnum[] = $row['seatnum'];
                                                                }
-                                                             } else {
-                                                               echo "0 results";
-                                                             }
+                                                             } 
                                                             for ($i = 31; $i <= 45; $i++) {
                                                               if (in_array($i, $seatnum)) {
                                                                 echo "<td tabindex=\"-1\" disabled style=\"background-color: #f1f1f1; color: #999; pointer-events: none;\" id=\"seat-$i\" data-name=\"$i\">$i</td>";
@@ -255,16 +254,14 @@
                                                           </tr>
                                                           <tr>
                                                             <?php 
-                                                            $result = mysqli_query($conn, "select seatnum from requestbus where destination = 'Kasoa, Cape Or Takoradi'");
+                                                            $result = mysqli_query($conn, "select seatnum from requestbus where destination = 'Kasoa, Cape Or Takoradi' and trip_status='active'");
                                                              $seatnum = array();
                                                              if (mysqli_num_rows($result) > 0) {
                                                                while ($row = mysqli_fetch_assoc($result)) {
                                                                  $seatnum[] = $row['seatnum'];
                                                                }
-                                                             } else {
-                                                               echo "0 results";
-                                                             }
-                                                            for ($i = 46; $i <= 55; $i++) {
+                                                             } 
+                                                            for ($i = 46; $i <= 50; $i++) {
                                                               if (in_array($i, $seatnum)) {
                                                                 echo "<td tabindex=\"-1\" disabled style=\"background-color: #f1f1f1; color: #999; pointer-events: none;\" id=\"seat-$i\" data-name=\"$i\">$i</td>";
                                                               } else {
@@ -299,11 +296,12 @@
                                         <div class="col-auto">
                                           <input type="text" id="seatnum" class="form-control" name="seatnum" readonly style="width: 250px;">
                                         </div>
-                                        <div class="col-auto">
-                                          <span id="seatInfo" class="form-text">
-                                            Select from the above figure, Maximum 1 seat.
-                                          </span>
-                                        </div>
+                                        <label for="departure_date">Please choose a departure date:</label>
+                                          <select class="input1 focused" name="departure_date" id="focusedInput" required="required" type="text">
+                                            <option value=""></option>
+                                            <option value="29th April 2023; 6AM">29th April 2023; 6AM</option>
+                                            <option value="30th April 2023; 6AM">30th April 2023; 6AM</option>
+                                          </select>
                                       </div>
                                     </div>
                                     <div>
@@ -353,7 +351,6 @@
                                     <br />
                                   </div>
                                   <br>
-                                  <h3> </h3><br>
                                   <button type="button" class="btn btn-primary" id="toggle2Btn" data-toggle="modal" data-target="#confirmSubmitModal">Submit</button>
                                   <!-- modal -->
                                   <div class="modal fade" id="confirmSubmitModal" tabindex="-1" role="dialog" aria-labelledby="confirmSubmitModalLabel" aria-hidden="true">
@@ -402,63 +399,45 @@
                                 </div>
                                 <!-- end of seats -->
 
-                                <!-- Payment Form -->
-                                <div>
-                                  <form id="payment-form" onsubmit="submitPayment(event)">
-                                    <h4>PAYMENT GH&#162; 190</h4><br>
-                                    <label for="phone-number">Phone Number:</label>
-                                    <input type="tel" id="phone-number" name="phone-number" required>
+                              <!-- Payment Form -->
+                              <div>
+                                  <form>
+                                    <label for="fromdate" required="required">Destination</label>
+                                    <select id="destination-select" class="input focused" name="actualdestination" id="focusedInput" required="required" type="text">
+                                      <option value="">Select destination</option>
+                                      <option value="Kasoa">Kasoa</option>
+                                      <option value="Cape Coast">Cape Coast</option>
+                                      <option value="Takoradi">Takoradi</option>
+                                    </select>
+                                    <h4>PAYMENT </h4>
+                                    <input type="tel" id="phone-number" placeholder="Enter Momo number" name="phone-number" required>
                                     <br>
                                     <label for="amount">Amount:</label>
-                                    <input type="number" id="amount" name="amount" min="190" max="190" required>
+                                    <input type="text" id="amount-field" name="amount" value="" readonly>
                                     <br>
                                     <button type="submit">Pay Now</button>
                                   </form>
-                                  <script>
-                                    // Replace with your own values
-                                    const API_USER_ID = "233243762748";
-                                    const PRIMARY_KEY = "db714f0828854468818b2ee337daa05f";
-                                    const SECONDARY_KEY = "474ea445b7e64380a4bbff92e6518311";
-
-                                    function submitPayment(event) {
-                                      event.preventDefault();
-                                      const phoneNumber = document.getElementById("phone-number").value;
-                                      const amount = document.getElementById("amount").value;
-                                      // Make request to MTN Mobile Money API
-                                      axios
-                                        .post(
-                                          "https://ericssonbasicapi2.azure-api.net/collection/v1_0/requesttopay", {
-                                            amount: amount,
-                                            currency: "UGX",
-                                            externalId: phoneNumber,
-                                            payer: {
-                                              partyIdType: "MSISDN",
-                                              partyId: phoneNumber
-                                            },
-                                            payerMessage: "Payment from MTN Pay",
-                                            payeeNote: "Thank you for your payment"
-                                          }, {
-                                            headers: {
-                                              Authorization: `Basic ${btoa(
-                                                `${PRIMARY_KEY}:${SECONDARY_KEY}`
-                                              )}`,
-                                              "X-Reference-Id": "my-unique-ref-id",
-                                              "X-Target-Environment": "sandbox",
-                                              "Ocp-Apim-Subscription-Key": API_USER_ID
-                                            }
-                                          }
-                                        )
-                                        .then(response => {
-                                          console.log(response.data);
-                                          alert("Payment successful!");
-                                        })
-                                        .catch(error => {
-                                          console.log(error.response.data);
-                                          alert("Payment failed.");
-                                        });
-                                    }
-                                  </script>
                                 </div>
+
+                                <script>
+                                  const destinationSelect = document.getElementById("destination-select");
+                                  const amountField = document.getElementById("amount-field");
+
+                                  destinationSelect.addEventListener("change", () => {
+                                    if (destinationSelect.value === "Kasoa") {
+                                      amountField.value = "120";
+                                      
+                                    } else if (destinationSelect.value === "Cape Coast") {
+                                      amountField.value = "145";
+                                    }
+                                    else if (destinationSelect.value === "Takoradi") {
+                                      amountField.value = "145";
+                                    }else {
+                                      amountField.value = "";
+                                    }
+                                  });
+                                </script>
+
                                 <!-- End of Payment Form -->
                               </div>
                             </div>
@@ -477,19 +456,21 @@
   </div>
 
   <?php
-
   $tablename = "requestbus";
   $fname_column = "fname";
   $lname_column = "lname";
   $time_column = "time";
+  $departure_date_column = "departure_date";
   $seatnum_column = "seatnum";
   $status_column = 'status';
   $level_column = "level";
   $fullname_column = "fullname";
   $pickup_column = "pickup";
+  $actualdestination_column = "actualdestination";
   $destination_column = "destination";
   $gmobile_column = "gmobile";
   $amount_column = 'amount';
+  $trip_status = 'trip_status';
   $cnt = 1;
 
   if (isset($_POST['submit'])) {
@@ -499,23 +480,25 @@
     $lname = $user_row['lname'];
     $level = $_POST['level'];
     $pickup = $_POST['pickup'];
+    $departure_date = $_POST['departure_date'];
     $destination = 'Kasoa, Cape Or Takoradi';
+    $actualdestination = $_POST['actualdestination'];
     $gmobile = $_POST['gmobile'];
     $seatnum = $_POST['seatnum'];
     $fullname = $fname . ' ' . $lname;
     $amount = $_POST['amount'];
     $status = 'Pending';
+    $active = 'active';
 
     // Insert data into database
-    $sql = "INSERT INTO $tablename ($fname_column, $lname_column, $status_column, $time_column, $seatnum_column, $level_column, $fullname_column, $pickup_column, $destination_column, $gmobile_column, $amount_column) VALUES ('$fname', '$lname', '$status' ,NOW(), '$seatnum', '$level', '$fullname', '$pickup', '$destination', '$gmobile', '$amount')";
-    if ($conn->query($sql) === TRUE) {
+$sql = "INSERT INTO $tablename ($fname_column, $lname_column, $actualdestination_column, $status_column, $time_column, $seatnum_column, $level_column, $fullname_column, $pickup_column, $destination_column, $gmobile_column, $amount_column, $trip_status,$departure_date_column) VALUES ('$fname', '$lname','$actualdestination', '$status' ,NOW(), '$seatnum', '$level', '$fullname', '$pickup', '$destination', '$gmobile', '$amount', '$active','$departure_date')";    if ($conn->query($sql) === TRUE) {
       echo '<script> alert("Bus Reserved ") </script>';
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
     }
   }
   ?>
-
+  
   <?php include 'footer.php'; ?>
   </div>
   <?php include 'script.php'; ?>

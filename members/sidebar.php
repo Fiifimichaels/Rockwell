@@ -191,33 +191,34 @@
                            <li class="active"> 
 						   <a href="dashboard.php"><i class="icon-chevron-right"></i><i class="icon-home"></i>&nbsp;Dashboard</a> 
 						   </li>
-						 				
 						 
                           <!------/.* Reservation sidebar*------->
 					    <li>						
-						    <a href="javascript:;" role="button" class="dropdown-toggle" data-toggle="collapse" data-target="#bs1"><i class="icon-chevron-right"></i><i class="icon-globe"></i>&nbsp;Bus Reservation
+						    <a href="javascript:;" role="button" class="dropdown-toggle" data-toggle="collapse" data-target="#bs1"><i class="fa fa-bus" aria-hidden="true"></i>&nbsp;Bus Reservation
 							<div class="muted pull-right"><i class="caret"></i></div></a>						
 						    <ul id="bs1" class="collapse">						
                             <li class="">
-                            <a href="request_bus_A.php"></i><i class="icon-user"></i> Request Accra & Tema Bus</a>
+                            <a href="request_bus_A.php"><i class="fa fa-bus" aria-hidden="true"></i> Request Accra or Tema Bus</a>
                             </li>
                             <li class="">
-                            <a href="request_bus_B.php"></i><i class="icon-user"></i> Request Kasoa, Cape & Takoradi Bus</a>
+                            <a href="request_bus_D.php"><i class="fa fa-bus" aria-hidden="true"></i> Request Medina or Adenta Bus</a>
                             </li>
                             <li class="">
-                            <a href="request_bus_C.php"></i><i class="icon-user"></i> Request Sewhi Bus</a>
+                            <a href="request_bus_B.php"><i class="fa fa-bus" aria-hidden="true"></i> Request Kasoa, Cape or Takoradi Bus</a>
                             </li>
-                  </ul>		
-                        </li>
-                        <!-- end of Bus Reservation -->
-
-                        <!-- Payment -->
-                        <li>						
+                            <li class="">
+                            <a href="request_bus_C.php"><i class="fa fa-bus" aria-hidden="true"></i> Request Sewhi Bus</a>
+                            </li>
+                          </ul>		
+                          </li>
+                          <!-- end of Bus Reservation -->
+                          <!-- Payment -->
+                          <li>						
 						    <a href="javascript:;" role="button" class="dropdown-toggle" data-toggle="collapse" data-target="#bs"><i class="icon-chevron-right"></i><i class="icon-calendar"></i></i>&nbsp;Confirmation
 						    <div class="muted pull-right"><i class="caret"></i></div></a>					
 						    <ul id="bs" class="collapse">		
 						                <li>
-                            <a href="bus_reserverd.php"></i><i class="icon-time"></i> Bus Reserved</a>
+                            <a href="bus_reserved.php"></i><i class="icon-time"></i> Bus Reserved</a>
                             </li>
 						    </ul>
                   <li class="active">
